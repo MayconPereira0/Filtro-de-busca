@@ -1,0 +1,312 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(58, 58, 58);
+}
+
+nav.menu-lateral{
+    width: 256px;
+    height: 595px;
+    background-color: #fff;
+    padding-top: 2%;
+    margin-top: 8%;
+    margin-left: 100px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+}
+
+.linha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    /* margin-left: 10px; */
+}
+
+#linha-img{
+    width: 95%;
+}
+
+.container-itens-menu{
+    width: 200px;
+    transition: 0.3s;
+}
+
+ul{
+    height:100%;
+    list-style-type:none;
+}
+
+.container-itens-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+ul li.item-menu a{
+    color: #030723;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 5px 6px 5px 6px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* icones menu */
+
+ul li.item-menu a .icon{
+    height: 0px;
+}
+
+/* icon seta */
+
+.txt-link {
+    /* background-color: blue; */
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    /* background-color: red; */
+    rotate: 180deg;
+}
+
+ul li.item-menu .sub-menu {
+    display: none;
+    transition: max-height 0.3s ease;
+}
+
+ul li.item-menu .sub-menu.active {
+    display: block;
+}
+
+ul li.item-menu a .dropdown {
+    position: absolute;
+    right: 36px;
+    margin: 0px;
+    transition: transform 0.3s ease;
+}
+
+ul li.item-menu .sub-menu.active + a .dropdown {
+    transform: rotate(180deg);
+}
+
+/* FILTRO PREÇO */
+
+.wrapper{
+    height: 90px;
+    width: 180px;
+    margin-left: 5%;
+}
+
+.input-preco{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+.input-preco .field{
+    width: 100%;
+    height: 30px;
+}
+
+.field input{
+   width: 100%;
+   height: 100%;
+   outline: none;
+   font-size: 14px;
+   padding: 8px;
+   border: .5px solid #9F9F9F;
+   border-radius: 3px;
+   -moz-appearence: none;
+}
+
+.field input[type="number"]::-webkit-outer-spin-button,
+.field input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+
+#linha2-img{
+    display: flex;
+    margin-top: 75%;
+}
+
+.slider{
+    top: 16px;
+    height: 4px;
+    border-radius: 5px;
+    background: #ddd;
+    position: relative;
+}
+
+.slider .progress{
+    height: 5px;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    background: #414141;
+}
+
+.range-input {
+    top: 16px;
+    position: relative;
+}
+
+.range-input input {
+    position: absolute;
+    top: -4px;
+    height: 4px;
+    width: 100%;
+    background: none;
+    pointer-events: none;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    pointer-events: auto;
+    appearance: none;
+    background: #000000;
+}
+
+input[type="range"]::-moz-range-thumb{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    pointer-events: auto;
+    -webkit-appearence: none;
+    background: #000000;
+}
+
+.text-filtro{
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    color: #A7A7A7;
+    align-items: center;
+    gap: 75%;
+    margin: 20px 0px 8px 0px;
+}
+
+/* Barra de pesquisa */
+.search-box{
+    display: flex;
+    align-items: center;
+    background-color: #F5F5F5;
+    width: 180px;
+    height: 40px;
+    margin: 16px 10px;
+    border-radius: 8px;
+}
+.search-input{
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.img-busca{
+    padding-left: 4px;
+}
+
+/* Checkbox */
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 12px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.lista::-webkit-scrollbar {
+    width: 2px;
+}
+
+.lista::-webkit-scrollbar-thumb {
+    background-color: #5D5D5D;
+    height: 50px;
+}
+
+.lista::-webkit-scrollbar-track {
+    background: #D9D9D9;
+}
+
+label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+    cursor: pointer;
+}
+
+label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.input-check {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 0.5px solid #D3D3D3;
+    border-radius: 3px;
+    margin-right: 8px;
+    transition: 0.3s;
+}
+
+label input:checked ~ .input-check {
+    background-color: #000000;
+}
+
+.input-check::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 2px;
+    height: 5px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    border-radius: 1px;
+    transform: scale(0) rotate(45deg);
+    transition: 0.3s;
+}
+
+label input:checked ~ .input-check::before {
+    transform: scale(1) rotate(45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
